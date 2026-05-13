@@ -1,0 +1,12 @@
+node_modules/
+
+# moon
+.moon/cache
+.moon/docker
+
+# build outputs
+dist/
+.output/
+.quasar/
+
+*.local
