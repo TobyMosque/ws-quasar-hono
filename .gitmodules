@@ -1,0 +1,3 @@
+[submodule "packages/quasar"]
+	path = packages/quasar
+	url = https://github.com/quasarframework/quasar.git
