@@ -1,0 +1,41 @@
+{
+  "name": "frontend",
+  "version": "0.0.1",
+  "private": true,
+  "description": "A Quasar Project",
+  "author": "Tobias Mesquita <tobias.mesquita@gmail.com>",
+  "type": "module",
+  "scripts": {
+    "lint": "oxfmt && oxlint --fix",
+    "lint:check": "oxfmt --check && oxlint",
+    "dev": "quasar dev",
+    "build": "quasar build",
+    "quasar": "quasar",
+    "postinstall": "quasar prepare"
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.16.4",
+    "backend": "workspace:*",
+    "hono": "^4.12.18",
+    "pinia": "^3.0.1",
+    "quasar": "^2.16.0",
+    "vue": "^3.5.22",
+    "vue-router": "^5.0.6"
+  },
+  "devDependencies": {
+    "@quasar/app-vite": "^3.0.0-beta.8",
+    "@types/node": "^22.19.11",
+    "autoprefixer": "^10.4.27",
+    "oxfmt": "^0.x",
+    "oxlint": "^1.63.0",
+    "oxlint-tsgolint": "^0.22.1",
+    "typescript": "npm:@typescript/typescript6@^6.0.0"
+  },
+  "engines": {
+    "node": "^28 || ^26 || ^24 || ^22.12",
+    "npm": ">= 6.13.4",
+    "pnpm": ">= 10",
+    "yarn": ">= 1.21.1"
+  },
+  "productName": "Quasar App"
+}

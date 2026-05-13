@@ -1,0 +1,21 @@
+// app global css
+
+:root {
+  --surface: #ffffff;
+  --bg:      #F2F5FA;   // cool blue-white
+  --border:  #D8E2F0;   // blue-tinted
+  --text:    #1A1D23;
+  --muted:   #5E6A82;
+  --radius:  4px;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "Roboto", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.q-page { background-color: var(--bg); }

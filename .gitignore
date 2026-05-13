@@ -10,3 +10,11 @@ dist/
 .quasar/
 
 *.local
+
+# sqlite
+*.db
+*.db-shm
+*.db-wal
+
+# claude code
+.claude/

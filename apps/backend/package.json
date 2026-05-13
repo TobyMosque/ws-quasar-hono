@@ -1,0 +1,22 @@
+{
+  "name": "backend",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/app.ts",
+    "./client": "./src/client.ts"
+  },
+  "scripts": {
+    "dev": "node --experimental-strip-types --watch src/index.ts",
+    "start": "node --experimental-strip-types src/index.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.0.2",
+    "@hono/zod-openapi": "^1.4.0",
+    "@scalar/hono-api-reference": "^0.10.14",
+    "db": "workspace:*",
+    "hono": "^4.12.18",
+    "zod": "^4.4.3"
+  }
+}
