@@ -2,3 +2,6 @@ packages:
   - 'apps/*'
   - 'packages/*'
   - 'packages/quasar/docs'
+allowBuilds:
+  '@parcel/watcher': true
+  esbuild: true

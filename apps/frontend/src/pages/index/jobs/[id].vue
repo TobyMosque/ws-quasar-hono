@@ -34,7 +34,15 @@
 </template>
 
 <script setup lang="ts">
+import { definePreFetch } from "#q-app"
 import JobPageAsync from "components/pages/JobAsync.vue";
+
+defineOptions({
+  preFetch: definePreFetch(() => {
+    console.log("Prefetching JobPage...");
+    return Promise.resolve();
+  })
+});
 </script>
 
 <style scoped lang="scss">

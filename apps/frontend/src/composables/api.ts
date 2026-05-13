@@ -20,6 +20,5 @@ export function createApi(pinia: Pinia) {
 
 export function useApi(pinia?: Pinia) {
   const diStore = useDiStore(pinia);
-  console.log(diStore.api);
   return diStore.api;
 }

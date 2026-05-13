@@ -1,35 +1,16 @@
-import { OpenAPIHono, createRoute, z } from "@hono/zod-openapi";
 import { apiReference } from "@scalar/hono-api-reference";
 import { Hono } from "hono";
 import { jobsRouter } from "./routes/jobs.ts";
 import { technologiesRouter } from "./routes/technologies.ts";
+import openApiDoc from "./openapi.ts";
 
-const api = new OpenAPIHono().basePath("/api");
-
-const healthRoute = createRoute({
-  method: "get",
-  path: "/health",
-  responses: {
-    200: {
-      content: {
-        "application/json": {
-          schema: z.object({ status: z.literal("ok") }),
-        },
-      },
-      description: "Health check",
-    },
-  },
-});
+const api = new Hono().basePath("/api");
 
 const routes = api
-  .openapi(healthRoute, c => c.json({ status: "ok" }))
-  .route("/", jobsRouter)
-  .route("/", technologiesRouter);
-
-api.doc("/openapi.json", {
-  openapi: "3.0.0",
-  info: { title: "Backend API", version: "0.0.1" },
-});
+  .get("/health", c => c.json({ status: "ok" as const }))
+  .get("/openapi.json", c => c.json(openApiDoc))
+  .route("/jobs", jobsRouter)
+  .route("/technologies", technologiesRouter);
 
 const app = new Hono();
 app.route("/", api);

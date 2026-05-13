@@ -13,10 +13,9 @@
   },
   "dependencies": {
     "@hono/node-server": "^2.0.2",
-    "@hono/zod-openapi": "^1.4.0",
     "@scalar/hono-api-reference": "^0.10.14",
+    "@sinclair/typebox": "^0.34.49",
     "db": "workspace:*",
-    "hono": "^4.12.18",
-    "zod": "^4.4.3"
+    "hono": "^4.12.18"
   }
 }
