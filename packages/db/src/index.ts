@@ -15,3 +15,5 @@ const client = createClient({
 export const db = drizzle(client, { schema });
 export { schema };
 export { and, count, desc, eq, isNotNull, like, or } from "drizzle-orm";
+export { CompanySchema, JobBaseSchema, TechnologySchema } from "./zod.ts";
+export type { Company, JobBase, Technology } from "./zod.ts";

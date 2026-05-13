@@ -1,31 +1,20 @@
 import { OpenAPIHono, createRoute, z } from "@hono/zod-openapi";
-import { and, count, db, desc, eq, isNotNull, like, or, schema } from "db";
+import {
+  CompanySchema,
+  JobBaseSchema,
+  TechnologySchema,
+  and,
+  count,
+  db,
+  desc,
+  eq,
+  isNotNull,
+  like,
+  or,
+  schema,
+} from "db";
 
-const CompanySchema = z.object({
-  id: z.number(),
-  name: z.string(),
-  logoUrl: z.string().nullable(),
-  website: z.string().nullable(),
-});
-
-const TechnologySchema = z.object({
-  id: z.number(),
-  name: z.string(),
-});
-
-const JobSchema = z.object({
-  id: z.number(),
-  title: z.string(),
-  description: z.string(),
-  workplace: z.enum(["remote", "hybrid", "onsite"]),
-  workType: z.enum(["full-time", "part-time", "contract"]),
-  seniority: z.enum(["junior", "mid", "senior"]),
-  country: z.string().nullable(),
-  city: z.string().nullable(),
-  salaryMin: z.number().nullable(),
-  salaryMax: z.number().nullable(),
-  isFeatured: z.boolean().nullable(),
-  publishedAt: z.string().nullable(),
+const JobSchema = JobBaseSchema.extend({
   company: CompanySchema,
   technologies: z.array(TechnologySchema),
 });

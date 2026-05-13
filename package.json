@@ -12,5 +12,8 @@
   },
   "devDependencies": {
     "@moonrepo/cli": "^2.2.4"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["@parcel/watcher", "esbuild"]
   }
 }
